@@ -7,7 +7,7 @@ import countries from './countries.png';
 import { Link } from "react-router-dom";
 export default function Home(){
 const projectsImages = [mars,recipe,countries]
-const projects2 = [{'name':'mars rover photo','image':mars},{'name':'recipe','image':recipe},{'name':'countries','image':countries}]
+const projects2 = [{'name':'mars rover photo','image':mars,'url':'https://jamarbevelmarsrover.netlify.app/camera'},{'name':'recipe','image':recipe,'url':'https://jamarbevelrecipesearch.netlify.app/recipeRandom'},{'name':'countries','image':countries,'url':'https://jamarbevelplaces.netlify.app/countries'}]
     return(
         <div style={{backgroundColor:'black'}} className='p-5'>
           <Container fluid>
@@ -30,7 +30,7 @@ const projects2 = [{'name':'mars rover photo','image':mars},{'name':'recipe','im
             <Row>
             {projects2.map((data) => (
                 <Col>
-                <Card className="shadow rounded text-center" bg='black' onClick={ProjectLink}>
+                <Card className="shadow rounded text-center" bg='black' onClick={() => ProjectLink(data.url)}>
                     <Image className="card-img-top" src={data.image} alt='website image' fluid />
                     <Card.Body>
                     <Card.Title style={{color:'white'}}>{data.name}</Card.Title>
@@ -48,10 +48,7 @@ const projects2 = [{'name':'mars rover photo','image':mars},{'name':'recipe','im
     );
 }
 
-function ProjectLink(){
-
-    <Link to={{ pathname: "https://example.com" }} target="_blank" />
-
+function ProjectLink(url:any){
+    window.location.href = url
     return null
-
 }
