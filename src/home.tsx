@@ -4,7 +4,7 @@ import me from './me.jpg';
 import mars from './mars.png';
 import recipe from './recipe.png';
 import countries from './countries.png';
-
+import { Link } from "react-router-dom";
 export default function Home(){
 const projectsImages = [mars,recipe,countries]
 const projects2 = [{'name':'mars rover photo','image':mars},{'name':'recipe','image':recipe},{'name':'countries','image':countries}]
@@ -50,7 +50,7 @@ const projects2 = [{'name':'mars rover photo','image':mars},{'name':'recipe','im
 
 function ProjectLink(){
 
-    window.location.href = 'www.google.com'
+    <Link to={{ pathname: "https://example.com" }} target="_blank" />
 
     return null
 
