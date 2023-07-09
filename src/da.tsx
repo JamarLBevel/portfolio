@@ -28,7 +28,7 @@ export default function Da() {
       <h1 className="p-4">Sign Up</h1>
       <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
-        <Form.Label>Email address</Form.Label>
+        <Form.Label>Email address </Form.Label>
         <Form.Control onChange={(e) => setEmail(e.target.value)} value={email} type="email" placeholder="johnwick@gmail.com" />
       </Form.Group>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
