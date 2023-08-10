@@ -123,9 +123,8 @@ How do I cancel?</Button>
    }}
    
 />
-<Link to={{ pathname: "https://jamarbevel.wixsite.com/treedanceprivacy" }} target="_blank">privacy policy </Link>
-
-<Link to={{ pathname: "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" }} target="_blank">terms of use</Link>
+<a href="https://jamarbevel.wixsite.com/treedanceprivacy">privacy policy </a>
+<a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">terms of use</a>
       </div>
     </Container>
     
