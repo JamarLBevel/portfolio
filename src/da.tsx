@@ -25,7 +25,7 @@ export default function Da() {
     return (
 <div className="p-4" style={{backgroundColor:'black',width:'100%',height:'100%',position:'fixed',color:'white'}}>
    <Container fluid>
-      <h1 className="p-4">Sign Up</h1>
+      <h1 className="p-4">Thank you for subscribing to Tree Dance! Create account to continue.</h1>
       <Form>
       <Form.Group className="mb-3" controlId="exampleForm.ControlInput1">
         <Form.Label>Email address </Form.Label>
