@@ -24,10 +24,9 @@ export default function Home(){
         <div className="ratio ratio-16x9">
       <iframe src="https://www.youtube.com/embed/04wTzqYuVWM" title="YouTube video"></iframe>
     </div>
-    <p style={{fontWeight:'bold'}}>$5.99 a month or 59.99 a year</p>
+    <p style={{fontWeight:'bold'}}>Start your 7 day free trial then $5.99 a month or 59.99 a year</p>
 <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1NePr2FxUqSaaFM4nTW6dTSi"
+<stripe-pricing-table pricing-table-id="prctbl_1NenGvFxUqSaaFM4G4ZRjsuM"
 publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8esdMsR7Eh1PpvoapOD4th7yF73eoT4BZCoQ00qyi9wpxB">
 </stripe-pricing-table>
   <h3 style={{fontWeight:'bold',textAlign:'start'}}> Just Added</h3>
@@ -66,8 +65,7 @@ publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8e
    <p>Get streaming access to all the content and all future releases</p>
     </div>
     <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1NePr2FxUqSaaFM4nTW6dTSi"
+<stripe-pricing-table pricing-table-id="prctbl_1NenGvFxUqSaaFM4G4ZRjsuM"
 publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8esdMsR7Eh1PpvoapOD4th7yF73eoT4BZCoQ00qyi9wpxB">
 </stripe-pricing-table>
 <div className="d-grid gap-2 p-3">
