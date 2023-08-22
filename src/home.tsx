@@ -1,7 +1,7 @@
 import React from "react";
-import { Container,Row,Col,Image,Card, CardGroup,Collapse,Button} from "react-bootstrap";
+import { Container,Row,Col,Image,Card, CardGroup,Collapse,Button,Carousel} from "react-bootstrap";
 import me from './me.jpg';
-import { useState } from "react";
+import { useState, useRef } from "react";
 import mars from './mars.png';
 import recipe from './recipe.png';
 import countries from './countries.png';
@@ -13,22 +13,65 @@ import pride from './pride.jpg';
 import fisher from './fisher.jpg';
 import juug from './juug.jpg';
 import pick from './pick.jpg';
+import waste from './waste.jpg';
+import black from './black.jpg';
+import moment from './moment.jpg';
+import { batch } from "react-redux";
+
 export default function Home(){
+//variables
+
   const [open, setOpen] = useState(false);
   const [open2, setOpen2] = useState(false);
   const [open3, setOpen3] = useState(false);
   const [open4, setOpen4] = useState(false);
+
+//scroll down function
+
+  const handleClickScroll = () => {
+    const element = document.getElementById('section-1');
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  //handle click to stripe
+
+  const stripeClickMonthly = () => {
+    window.location.href = "https://buy.stripe.com/dR60214AbdgJgiAbIJ"
+  }
+  const stripeClickAnnual = () => {
+    window.location.href = "https://buy.stripe.com/dR63edeaL0tX7M4fYY"
+  }
+
     return(
+
         <div style={{backgroundColor:'black',color:'white',textAlign:'center'}}>
         <Container fluid>
         <div className="ratio ratio-16x9">
       <iframe src="https://www.youtube.com/embed/04wTzqYuVWM" title="YouTube video"></iframe>
     </div>
-    <p style={{fontWeight:'bold'}}>Start your 7 day free trial then $5.99 a month or 59.99 a year</p>
+    <div className="p-4">
+    <h3 style={{fontWeight:'bold'}}> Watch Orginals</h3>
+   <p>Unshackle yourself from the sequel cycle! Embrace indie creators, fuel innovation. Say no to remakes, yes to fresh narratives. Your support ignites originality.</p>
+   <Carousel>
+      <Carousel.Item>
+      <Card.Img src={waste} />
+      </Carousel.Item>
+      <Carousel.Item>
+       <Card.Img src={black} />
+      </Carousel.Item>
+      <Carousel.Item>
+       <Card.Img src={moment} />
+      </Carousel.Item>
+    </Carousel>
+   <h3 style={{fontWeight:'bold'}}>Support Independent Filmmakers</h3>
+   <p>Your support is the key to unlocking a realm of creativity, delivering you extraordinary stories, art, and innovations. Become a patron of originality today and shape a world of imagination like never before.</p>
+    </div>
+    
 <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1NenGvFxUqSaaFM4G4ZRjsuM"
-publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8esdMsR7Eh1PpvoapOD4th7yF73eoT4BZCoQ00qyi9wpxB">
-</stripe-pricing-table>
+<Button variant="warning" onClick={handleClickScroll}>Join Today</Button>
   <h3 style={{fontWeight:'bold',textAlign:'start'}}> Just Added</h3>
     <Row xs={2} md={4} lg={6} className="g-4 p-3">
         <Card bg="black">
@@ -51,23 +94,43 @@ publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8e
     </Card>
     </Row> 
     <div className="p-4">
-    <h3 style={{fontWeight:'bold'}}> Watch Orginals</h3>
-   <p>Unshackle yourself from the sequel cycle! Embrace indie creators, fuel innovation. Say no to remakes, yes to fresh narratives. Your support ignites originality.</p>
-   <h3 style={{fontWeight:'bold'}}>Support Independent Filmmakers</h3>
-   <p>Your support is the key to unlocking a realm of creativity, delivering you extraordinary stories, art, and innovations. Become a patron of originality today and shape a world of imagination like never before.</p>
- 
-    </div>
-    <Image className='p-3' src={tde} rounded  fluid />
-    <div className="p-4">
     <h3 style={{fontWeight:'bold'}}>Cancel Anytime</h3>
     <p>Charged once per month or once per year.</p>
     <h3 style={{fontWeight:'bold'}}>Unlimited Streaming</h3>
    <p>Get streaming access to all the content and all future releases</p>
     </div>
-    <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<stripe-pricing-table pricing-table-id="prctbl_1NenGvFxUqSaaFM4G4ZRjsuM"
-publishable-key="pk_live_51NPdaxFxUqSaaFM4QcFMAAyK9wbkdxIMt1fNDVMjmVakNjvJssna8esdMsR7Eh1PpvoapOD4th7yF73eoT4BZCoQ00qyi9wpxB">
-</stripe-pricing-table>
+    <Image className='p-3' src={tde} rounded  fluid />
+   
+<div id="section-1">
+  <h1>Choose Your Membership</h1>
+<Row xs={2} md={6} className="g-4 p-4">
+      <Col>
+      <Card className="priceCard p-3 rounded-lg">
+      <Card.Header className="p-1" style={{background:'white',color:'black'}}>most popular</Card.Header>
+       <Card.Title className="pt-3">Annual</Card.Title>
+        <Card.Body>
+          <Card.Title style={{fontWeight:'bold'}}>Tree Dance</Card.Title>
+          <Card.Text>
+           <h1 style={{fontWeight:'bold'}}>$59.99</h1><p>per year</p>
+          </Card.Text>
+          <Button onClick={stripeClickAnnual} variant="warning">Subscribe</Button>
+        </Card.Body>
+      </Card>
+      </Col>
+      <Col>
+      <Card className="priceCard p-4">
+      <Card.Title className="pt-3">monthly</Card.Title>
+        <Card.Body>
+          <Card.Title>Tree Dance</Card.Title>
+          <Card.Text>
+            <h1 style={{fontWeight:'bold'}}>$5.99</h1><p>per month</p>
+          </Card.Text>
+          <Button onClick={stripeClickMonthly} variant="warning">Subscribe</Button>
+        </Card.Body>
+      </Card>
+      </Col>
+      </Row>
+      </div>
 <div className="d-grid gap-2 p-3">
   <h2 style={{fontWeight:'bold'}}>Frequently Asked Questions</h2>
 <Button style={{textAlign:'center'}} variant="dark" size="lg"  onClick={() => setOpen(!open)}

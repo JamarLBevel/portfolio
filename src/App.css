@@ -12,6 +12,16 @@
     animation: App-logo-float infinite 3s ease-in-out;
   }
 }
+.priceCard:hover{
+  transform: scale(1.15);
+
+}
+.card.priceCard{
+  background-color: #1a1a1a;
+  border-color: #6F6F6F;
+}
+
+
 
 .App-header {
   min-height: 100vh;
@@ -25,6 +35,7 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
+
 
 @keyframes App-logo-float {
   0% {

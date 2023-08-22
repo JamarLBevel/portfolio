@@ -8,5 +8,6 @@ export default function Contact(){
             email: jamarbevel@gmail.com
         </h1>
     </div>
+    
     );
 }
