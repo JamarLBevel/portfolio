@@ -66,7 +66,7 @@ export default function Home(){
        <Card.Img src={moment} />
       </Carousel.Item>
     </Carousel>
-   <h3 style={{fontWeight:'bold'}}>Support Independent Filmmakers</h3>
+   <h3 className="pt-3" style={{fontWeight:'bold'}}>Support Independent Filmmakers</h3>
    <p>Your support is the key to unlocking a realm of creativity, delivering you extraordinary stories, art, and innovations. Become a patron of originality today and shape a world of imagination like never before.</p>
     </div>
     
