@@ -2,6 +2,7 @@ import React from "react";
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
 import { Container,Form,Button,Alert } from "react-bootstrap";
+import {useNavigate} from 'react-router-dom';
 export default function SignIn(){
     const [show,setShow] = useState(false);
     const auth = getAuth();
@@ -9,12 +10,14 @@ export default function SignIn(){
     const [password,setPassword] = useState("");
     const [isSign,setIsSign] = useState(false);
     const [error,setError] = useState("")
+    const navigate = useNavigate();
     function signIn(){
         signInWithEmailAndPassword(auth, email, password)
   .then((userCredential) => {
     // Signed in 
     const user = userCredential.user;
-    window.location.replace('http://localhost:3000/movies');
+    //window.location.replace('http://localhost:3000/movies');
+    navigate('/movies');
     console.log("gogogogogo")
     // ...
   })
@@ -61,7 +64,6 @@ export default function SignIn(){
         </div>
       </Alert>
    </Container>
-   
     </div>
     );
 }

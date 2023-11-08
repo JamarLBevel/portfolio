@@ -43,13 +43,11 @@ onAuthStateChanged(auth, (user) => {
   return (
 
     <div>
-    {signedIn == false &&
+    
     <Navbar bg="dark" variant='dark' expand="lg">
      <Container>
-       <Navbar.Brand href="#home">TREE DANCE</Navbar.Brand>
-     
+       <Navbar.Brand href="home">TREE DANCE</Navbar.Brand>
          <Nav>
-         
            <Nav.Item>
             <Nav.Link className=' p-2  bg-warning text-dark rounded-pill' href='/signIn'>Sign In</Nav.Link>
            </Nav.Item>
@@ -58,7 +56,7 @@ onAuthStateChanged(auth, (user) => {
      
      </Container>
    </Navbar>
-}
+
      <Outlet/>
     
 
