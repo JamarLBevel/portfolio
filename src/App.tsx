@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
 import './App.css';
@@ -7,7 +7,7 @@ import { Outlet } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import firebase from 'firebase/app';
 import 'firebase/firestore';
-import 'firebase/auth';
+import { getAuth, onAuthStateChanged } from  'firebase/auth';
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
@@ -21,30 +21,47 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
+const auth = getAuth();
 function App() {
+const [signedIn,setSignedIn] = useState(false);
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/auth.user
+    const uid = user.uid;
+    console.log("user is logged in jamar")
+    setSignedIn(true)
+    // ...
+  } else {
+    // User is signed out
+    // ...
+    console.log("user not logged in")
+    setSignedIn(false)
+
+  }
+});
   return (
+
     <div>
+    {signedIn == false &&
     <Navbar bg="dark" variant='dark' expand="lg">
      <Container>
        <Navbar.Brand href="#home">TREE DANCE</Navbar.Brand>
-       <Navbar.Toggle aria-controls="basic-navbar-nav" />
-       <Navbar.Collapse id="basic-navbar-nav">
-         <Nav className="me-auto">
+     
+         <Nav>
+         
            <Nav.Item>
-           <Nav.Link href="/contact">Contact</Nav.Link>
-           </Nav.Item>
-           <Nav.Item>
-            <Nav.Link href="/home">Home</Nav.Link>
-           </Nav.Item>
-           <Nav.Item>
-            <Nav.Link href='/da'>Sign In</Nav.Link>
+            <Nav.Link className=' p-2  bg-warning text-dark rounded-pill' href='/signIn'>Sign In</Nav.Link>
            </Nav.Item>
          </Nav>
-       </Navbar.Collapse>
+         
+     
      </Container>
    </Navbar>
-
+}
      <Outlet/>
+    
+
    </div>
   );
 }

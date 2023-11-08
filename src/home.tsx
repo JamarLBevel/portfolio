@@ -16,6 +16,8 @@ import pick from './pick.jpg';
 import waste from './waste.jpg';
 import black from './black.jpg';
 import moment from './moment.jpg';
+import astralwoods from './astralwoods.jpg';
+import tdehead3 from './tdehead3.png';
 import { batch } from "react-redux";
 
 export default function Home(){
@@ -38,20 +40,18 @@ export default function Home(){
 
   //handle click to stripe
 
-  const stripeClickMonthly = () => {
-    window.location.href = "https://buy.stripe.com/dR60214AbdgJgiAbIJ"
+  const stripeClickSemi = () => {
+    window.location.href = "https://buy.stripe.com/6oEdSR7Mnb8BeasfZ1"
   }
   const stripeClickAnnual = () => {
-    window.location.href = "https://buy.stripe.com/dR63edeaL0tX7M4fYY"
+    window.location.href = "https://buy.stripe.com/bIY5ml2s33G93vO8wy"
   }
 
     return(
-
+        
         <div style={{backgroundColor:'black',color:'white',textAlign:'center'}}>
         <Container fluid>
-        <div className="ratio ratio-16x9">
-      <iframe src="https://www.youtube.com/embed/04wTzqYuVWM" title="YouTube video"></iframe>
-    </div>
+      <Image src={tdehead3} fluid/>
     <div className="p-4">
     <h3 style={{fontWeight:'bold'}}> Watch Orginals</h3>
    <p>Unshackle yourself from the sequel cycle! Embrace indie creators, fuel innovation. Say no to remakes, yes to fresh narratives. Your support ignites originality.</p>
@@ -63,7 +63,7 @@ export default function Home(){
        <Card.Img src={black} />
       </Carousel.Item>
       <Carousel.Item>
-       <Card.Img src={moment} />
+       <Card.Img src={moment}/>
       </Carousel.Item>
     </Carousel>
    <h3 className="pt-3" style={{fontWeight:'bold'}}>Support Independent Filmmakers</h3>
@@ -71,7 +71,9 @@ export default function Home(){
     </div>
     
 <script async src="https://js.stripe.com/v3/pricing-table.js"></script>
-<Button variant="warning" onClick={handleClickScroll}>Join Today</Button>
+<div className="d-grid gap-2 p-5">
+<Button size="lg" className="rounded-pill" variant="warning" onClick={handleClickScroll}>Join Today</Button>
+</div>
   <h3 style={{fontWeight:'bold',textAlign:'start'}}> Just Added</h3>
     <Row xs={2} md={4} lg={6} className="g-4 p-3">
         <Card bg="black">
@@ -102,7 +104,7 @@ export default function Home(){
     <Image className='p-3' src={tde} rounded  fluid />
    
 <div id="section-1">
-  <h1>Choose Your Membership</h1>
+  <h1>Choose Your Plan</h1>
 <Row xs={2} md={6} className="g-4 p-4">
       <Col>
       <Card className="priceCard p-3 rounded-lg">
@@ -111,7 +113,7 @@ export default function Home(){
         <Card.Body>
           <Card.Title style={{fontWeight:'bold'}}>Tree Dance</Card.Title>
           <Card.Text>
-           <h1 style={{fontWeight:'bold'}}>$59.99</h1><p>per year</p>
+           <h1 style={{fontWeight:'bold'}}>$79.99</h1><p>per year</p>
           </Card.Text>
           <Button onClick={stripeClickAnnual} variant="warning">Subscribe</Button>
         </Card.Body>
@@ -119,13 +121,13 @@ export default function Home(){
       </Col>
       <Col>
       <Card className="priceCard p-4">
-      <Card.Title className="pt-3">monthly</Card.Title>
+      <Card.Title className="pt-3">Semi-Annual</Card.Title>
         <Card.Body>
           <Card.Title>Tree Dance</Card.Title>
           <Card.Text>
-            <h1 style={{fontWeight:'bold'}}>$5.99</h1><p>per month</p>
+            <h1 style={{fontWeight:'bold'}}>$39.99</h1><p>semi-annum</p>
           </Card.Text>
-          <Button onClick={stripeClickMonthly} variant="warning">Subscribe</Button>
+          <Button onClick={stripeClickSemi} variant="warning">Subscribe</Button>
         </Card.Body>
       </Card>
       </Col>
@@ -152,7 +154,7 @@ How much does Tree Dance cost?</Button>
 
 <Collapse in={open2}>
         <div id="example-collapse-text2">
-         Watch Tree Dance on your smartphone, tablet, laptop, computer all for cost of $5.99 per month or 59.99 per year. No extra costs. No contracts
+         Watch Tree Dance on your smartphone, tablet, laptop, computer all for cost of $39.99 semi-annum or $79.99 per year. No extra costs. No contracts
         </div>
       </Collapse>
       <Button style={{textAlign:'center'}} variant="dark" size="lg"  onClick={() => setOpen4(!open4)}
