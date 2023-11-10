@@ -48,9 +48,9 @@ export default function Home(){
   }
 
     return(
-        
+      <Container fluid>
         <div style={{backgroundColor:'black',color:'white',textAlign:'center'}}>
-        <Container fluid>
+        
       <Image src={tdehead3} fluid/>
     <div className="p-4">
     <h3 style={{fontWeight:'bold'}}> Watch Orginals</h3>
@@ -193,10 +193,10 @@ How do I cancel?</Button>
 <a href="https://jamarbevel.wixsite.com/treedanceprivacy">privacy policy </a>
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">terms of use</a>
       </div>
-    </Container>
+   
     
         </div>
-        
+        </Container>
      
        
     );
