@@ -21,46 +21,18 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
-const auth = getAuth();
 function App() {
-const [signedIn,setSignedIn] = useState(false);
-onAuthStateChanged(auth, (user) => {
-  if (user) {
-    // User is signed in, see docs for a list of available properties
-    // https://firebase.google.com/docs/reference/js/auth.user
-    const uid = user.uid;
-    console.log("user is logged in jamar")
-    setSignedIn(true)
-    // ...
-  } else {
-    // User is signed out
-    // ...
-    console.log("user not logged in")
-    setSignedIn(false)
-
-  }
-});
   return (
-
     <div>
-    
     <Navbar bg="dark" variant='dark' expand="lg">
-     <Container>
        <Navbar.Brand href="#home">TREE DANCE</Navbar.Brand>
-
          <Nav>
            <Nav.Item>
             <Nav.Link className=' p-2  bg-warning text-dark rounded-pill' href='/signIn'>Sign In</Nav.Link>
            </Nav.Item>
          </Nav>
-         
-     
-     </Container>
    </Navbar>
-
      <Outlet/>
-    
-
    </div>
   );
 }

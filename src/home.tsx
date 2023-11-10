@@ -48,7 +48,7 @@ export default function Home(){
   }
 
     return(
-      <Container fluid>
+        
         <div style={{backgroundColor:'black',color:'white',textAlign:'center'}}>
         
       <Image src={tdehead3} fluid/>
@@ -105,6 +105,7 @@ export default function Home(){
    
 <div id="section-1">
   <h1>Choose Your Plan</h1>
+  <Container fluid>
 <Row xs={2} md={6} className="g-4 p-4">
       <Col>
       <Card className="priceCard p-3 rounded-lg">
@@ -132,7 +133,9 @@ export default function Home(){
       </Card>
       </Col>
       </Row>
+      </Container>
       </div>
+
 <div className="d-grid gap-2 p-3">
   <h2 style={{fontWeight:'bold'}}>Frequently Asked Questions</h2>
 <Button style={{textAlign:'center'}} variant="dark" size="lg"  onClick={() => setOpen(!open)}
@@ -188,17 +191,11 @@ How do I cancel?</Button>
    height: "5px",
    border: "none",
    }}
-   
 />
 <a href="https://jamarbevel.wixsite.com/treedanceprivacy">privacy policy </a>
 <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">terms of use</a>
       </div>
-   
-    
-        </div>
-        </Container>
-     
-       
+        </div>  
     );
 }
 declare global {
