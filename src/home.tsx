@@ -106,7 +106,7 @@ export default function Home(){
 <div id="section-1">
   <h1>Choose Your Plan</h1>
   <Container fluid>
-<Row xs={2} md={6} className="g-4 p-4">
+<Row xs={2} md={6} lg={4} className="g-4 p-4">
       <Col>
       <Card className="priceCard p-3 rounded-lg">
       <Card.Header className="p-1" style={{background:'white',color:'black'}}>most popular</Card.Header>

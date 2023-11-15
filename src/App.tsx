@@ -25,7 +25,7 @@ function App() {
   return (
     <div>
     <Navbar bg="dark" variant='dark' expand="lg">
-       <Navbar.Brand href="#home">TREE DANCE</Navbar.Brand>
+       <Navbar.Brand href="home">TREE DANCE</Navbar.Brand>
          <Nav>
            <Nav.Item>
             <Nav.Link className=' p-2  bg-warning text-dark rounded-pill' href='/signIn'>Sign In</Nav.Link>
